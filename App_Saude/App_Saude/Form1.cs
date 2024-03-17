@@ -27,10 +27,15 @@ namespace App_Saude
 
 
             // Opcional: ocultar o formulário atual se desejado
-            this.Hide();
+            //this.Hide();
         }
 
-        
+        private void tmb_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+            //this.Hide();
+        }
     }
 
    
