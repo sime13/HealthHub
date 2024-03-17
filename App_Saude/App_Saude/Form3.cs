@@ -20,6 +20,7 @@ namespace App_Saude
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (double.TryParse(Peso.Text, out double peso) &&
                 double.TryParse(Altura.Text, out double altura) &&
                 int.TryParse(Idade.Text, out int idade))
@@ -32,12 +33,23 @@ namespace App_Saude
                 if (Masculino.Checked)
                 {
                     Reusutado.Text = $"Seu TMB é: {tmbMasculino:F2} kcal/dia";
-
+             
+                    Exibicao.Text = $"Sedentario: {tmbMasculino * 1.2m:F2} kcal/dia";
+                    Exibicao1.Text = $"Levemente ativo: {tmbMasculino * 1.375m:F2} kcal/dia";
+                    Exibicao2.Text = $"Moderamente ativo: {tmbMasculino * 1.55m:F2} kcal/dia";
+                    Exibicao3.Text = $"Muit ativo: {tmbMasculino * 1.725m} kcal/dia";
+                    Exibicao4.Text = $"Extremamente ativo: {tmbMasculino * 1.9m:F2} kcal/dia";
 
                 }
                 else if (Feminino.Checked)
                 {
                     Reusutado.Text = $"Seu TMB é: {tmbFeminino:F2} kcal/dia";
+
+                    Exibicao.Text = $"Sedentario: {tmbFeminino * 1.2m:F2} kcal/dia";
+                    Exibicao1.Text = $"Levemente ativo: {tmbFeminino * 1.375m:F2} kcal/dia";
+                    Exibicao2.Text = $"Moderamente ativo: {tmbFeminino * 1.55m:F2} kcal/dia";
+                    Exibicao3.Text = $"Muit ativo: {tmbFeminino * 1.725m:F2} kcal/dia";
+                    Exibicao4.Text = $"Extremamente ativo: {tmbFeminino * 1.9m:F2} kcal/dia";
                 }
                 else
                 {
@@ -59,5 +71,8 @@ namespace App_Saude
             Altura.Text = "";
             Idade.Text = "";
         }
+
+        // Exibicao
+
     }
 }
